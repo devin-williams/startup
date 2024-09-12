@@ -16,3 +16,8 @@
     - ***all bold and italic*** - (`***words***`) - three asterisks
     - Sub<sub>script</sub> - (`word and <sub>subscripted</sub> word`) - use html `<sub>` code
     - Super<sup>script</sup> - (`word and <sup>scripted</sup> word`) - use html `<sup>` code
+
+
+## What I learned from this first assignment
+- I learned about how to write effective markdown notes and am excited to learn more about it. I have used github for awhile now but I haven't ever really used the README or any type of markdown file before
+- also it was fun to learn more about merging conflicts
