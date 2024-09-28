@@ -40,3 +40,49 @@ Introducing CloudBooks Pro, the ultimate cloud hosting service for QuickBooks us
                     - receive real-time updates on changes to financial data (e.g., when a transaction is updated, all users receive the update without refreshing)<br>
                     - display real-time notifications when new transactions, invoices, or payments are processed<br>
                     - live chat with IT support<br>
+## HTML Deliverable
+
+### Overview
+In this deliverable, we have structured the initial HTML framework for CloudBooks Pro. This includes creating multiple HTML pages with placeholders for future content and functionality. The main components of the application are represented in separate HTML files, ensuring a clear and organized structure.
+
+### Implemented Pages
+1. **index.html**: The main landing page of the application. It includes:
+   - A header with the application title.
+   - A navigation bar with links to other pages.
+   - A main content area with a brief description of the application.
+   - A footer with a link to the GitHub repository.
+
+2. **login.html**: The login page for user authentication. It includes:
+   - A header with the page title.
+   - A navigation bar with links to other pages.
+   - A form for users to enter their username and password.
+   - A footer with a link to the GitHub repository.
+
+3. **data.html**: A placeholder page for displaying database data. It includes:
+   - A header with the page title.
+   - A navigation bar with links to other pages.
+   - A main content area with a placeholder for database data.
+   - A footer with a link to the GitHub repository.
+
+4. **realtime.html**: A placeholder page for displaying real-time data via WebSockets. It includes:
+   - A header with the page title.
+   - A navigation bar with links to other pages.
+   - A main content area with a placeholder for real-time data.
+   - A footer with a link to the GitHub repository.
+
+### CSS Enhancements
+The CSS file has been improved to enhance the visual appeal and responsiveness of the application. Key improvements include:
+- A responsive design using media queries to ensure the layout looks good on different screen sizes.
+- Improved navigation with styles for active links and hover effects.
+- Enhanced footer styling to ensure it stays at the bottom of the page.
+- Padding and margin adjustments for better readability.
+- Specific styling for the GitHub link in the footer.
+
+### GitHub Repository
+The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
+
+### Next Steps
+- Implement the backend services for user authentication, data retrieval, and real-time updates.
+- Integrate the frontend with the backend services using JavaScript and React.
+- Enhance the visual design with more detailed CSS and possibly additional libraries or frameworks.
+- Continuously commit and push changes to GitHub to track progress and maintain version control.
