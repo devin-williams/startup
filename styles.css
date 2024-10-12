@@ -258,6 +258,16 @@ table tbody tr:last-of-type {
     display: inline-block;
 }
 
+.message.help-rep {
+    background-color: #b3e3ea;
+    align-self: flex-start;
+}
+
+.message.user {
+    background-color: #f1f8e9;
+    align-self: flex-end;
+}
+
 .chat-input {
     display: flex;
     padding: 10px;
