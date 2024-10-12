@@ -112,3 +112,15 @@ In this deliverable, we have enhanced the CSS framework for CloudBooks Pro. This
    - Differentiated between help representative and user messages with distinct background colors.
    - Ensured the chat input field and send button are styled for usability.
 
+### Responsive Design
+- Implemented media queries to ensure the layout looks good on different screen sizes.
+- Adjusted navigation and main content styles for better responsiveness.
+
+### GitHub Repository
+The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
+
+### Next Steps
+- Continue to refine and enhance the visual design with more detailed CSS and possibly additional libraries or frameworks.
+- Integrate the frontend with the backend services using JavaScript and React.
+- Implement the backend services for user authentication, data retrieval, and real-time updates.
+- Continuously commit and push changes to GitHub to track progress and maintain version control.
