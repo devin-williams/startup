@@ -93,3 +93,22 @@ In this deliverable, we have enhanced the CSS framework for CloudBooks Pro. This
    - Styled images with border-radius and box shadow for a modern look.
    - Added hover effects to images for interactivity.
 
+5. **Footer Styles**:
+   - Styled the footer with a background color, padding, and box shadow.
+   - Ensured the footer stays at the bottom of the page.
+
+6. **Form Styles**:
+   - Styled form elements with padding, border, and border-radius for a clean look.
+   - Ensured form labels and inputs are aligned properly.
+   - Styled buttons with background color, padding, and hover effects.
+
+7. **Table Styles**:
+   - Styled tables with border-collapse, padding, and box shadow for a professional look.
+   - Applied alternating row colors for better readability.
+   - Ensured table headers are styled with a background color and text color.
+
+8. **Chat Window Styles**:
+   - Styled the chat window with border, border-radius, and box shadow.
+   - Differentiated between help representative and user messages with distinct background colors.
+   - Ensured the chat input field and send button are styled for usability.
+
