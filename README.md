@@ -70,19 +70,26 @@ In this deliverable, we have structured the initial HTML framework for CloudBook
    - A main content area with a placeholder for real-time data.
    - A footer with a link to the GitHub repository.
 
-### CSS Enhancements
-The CSS file has been improved to enhance the visual appeal and responsiveness of the application. Key improvements include:
-- A responsive design using media queries to ensure the layout looks good on different screen sizes.
-- Improved navigation with styles for active links and hover effects.
-- Enhanced footer styling to ensure it stays at the bottom of the page.
-- Padding and margin adjustments for better readability.
-- Specific styling for the GitHub link in the footer.
+## CSS Deliverable
 
-### GitHub Repository
-The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
+### Overview
+In this deliverable, we have enhanced the CSS framework for CloudBooks Pro. This includes creating a responsive and visually appealing design for the application. The main components of the application are styled to ensure a consistent and user-friendly interface.
 
-### Next Steps
-- Implement the backend services for user authentication, data retrieval, and real-time updates.
-- Integrate the frontend with the backend services using JavaScript and React.
-- Enhance the visual design with more detailed CSS and possibly additional libraries or frameworks.
-- Continuously commit and push changes to GitHub to track progress and maintain version control.
+### Implemented Styles
+1. **General Styles**: 
+   - Applied a consistent font family, background color, and text color across the application.
+   - Ensured a flexible and responsive layout using Flexbox.
+
+2. **Header Styles**:
+   - Styled the header with a background color, padding, and box shadow.
+   - Ensured the header text is centered and visually appealing.
+
+3. **Navigation Styles**:
+   - Styled the navigation bar with a background color and hover effects.
+   - Ensured the active link is highlighted for better user experience.
+
+4. **Main Content Styles**:
+   - Applied padding and margin adjustments for better readability.
+   - Styled images with border-radius and box shadow for a modern look.
+   - Added hover effects to images for interactivity.
+
