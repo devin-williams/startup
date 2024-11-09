@@ -274,6 +274,8 @@ table tbody tr:last-of-type {
     margin-bottom: 10px;
     word-wrap: break-word; /* Ensure long words break to the next line */
     white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    display: flex; /* Use Flexbox to align items */
+    align-items: center; /* Center items vertically */
   }
   
   .message .user {
