@@ -42,7 +42,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <img src="src/assets/images/bookkeeping.jpg" alt="Bookkeeping" />
+        <img src="/assets/images/bookkeeping.jpg" alt="Bookkeeping" />
       </div>
     </main>
   );
