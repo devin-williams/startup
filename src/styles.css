@@ -325,3 +325,47 @@ table tbody tr:last-of-type {
     background-color: #45a049;
     transform: scale(1.05);
 }
+
+.features {
+    margin-top: 20px;
+}
+  
+.feature {
+    margin-bottom: 10px;
+}
+  
+.feature h3 {
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+  
+.feature h3:hover {
+    color: var(--dark-color);
+}
+  
+.feature p {
+    margin: 5px 0 0 0;
+}
+  
+.arrow {
+    margin-left: 10px;
+    border: solid var(--primary-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.3s;
+    /* border: 1px solid blue; */
+}
+  
+.arrow.right {
+    transform: rotate(45deg);
+}
+  
+.arrow.down {
+    transform: rotate(135deg);
+}
