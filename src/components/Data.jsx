@@ -10,6 +10,7 @@ const Data = () => {
         { id: 1, name: 'John Doe', email: 'john.doe@example.com', balance: '$1,200.00' },
         { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', balance: '$2,500.00' },
         { id: 3, name: 'Michael Brown', email: 'michael.brown@example.com', balance: '$3,750.00' },
+        { id: 4, name: 'Devin Williams', email: 'devin.williams@example.com', balance: '$100,000,000.00'}
       ];
       setData(result);
     };
