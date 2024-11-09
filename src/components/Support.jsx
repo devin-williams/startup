@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Realtime = () => {
+const Support = () => {  
   const [messages, setMessages] = useState([
     { user: 'John Doe', text: 'Hello! How can I help you today?', type: 'help-rep' },
     { user: 'Jane Smith', text: 'I need assistance with my account.', type: 'user' },
@@ -57,4 +57,4 @@ const Realtime = () => {
   );
 };
 
-export default Realtime;
+export default Support;
