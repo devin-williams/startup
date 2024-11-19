@@ -1,12 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+const express = require('express');
+const app = express();
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api': 'http://localhost:4000',
-    },
-  },
-})
+app.use(express.static('public'));
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
