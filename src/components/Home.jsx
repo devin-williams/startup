@@ -26,6 +26,20 @@ const Home = () => {
     );
   };
 
+  useEffect(() => {
+    const fetchQuote = async () => {
+      try {
+        const response = await fetch('/api/quote');
+        const data = await response.json();
+        setQuote(data.content);
+      } catch (error) {
+        console.error('Failed to fetch quote:', error);
+      }
+    };
+
+    fetchQuote();
+  }, []);
+
   return (
     <main>
       <div className="container">
@@ -43,6 +57,10 @@ const Home = () => {
           ))}
         </div>
         <img src="/assets/images/bookkeeping.jpg" alt="Bookkeeping" />
+        <div className="quote">
+          <h3>Random Quote</h3>
+          <p>{quote}</p>
+        </div>
       </div>
     </main>
   );
