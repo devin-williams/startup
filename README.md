@@ -175,3 +175,43 @@ The footer of each HTML page includes a link to the GitHub repository for this p
 - Integrate the frontend with the backend services using JavaScript and React.
 - Implement the backend services for user authentication, data retrieval, and real-time updates.
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
+
+## Service Deliverable
+
+### Overview
+In this deliverable, we have enhanced the CloudBooks Pro application by integrating a backend service using Node.js and Express. This includes creating API endpoints to fetch data from third-party services, setting up environment variables for secure configuration, and ensuring seamless communication between the frontend and backend.
+
+### Implemented Features
+1. **Backend Setup**:
+   - Set up a Node.js and Express backend.
+   - Created a `service/index.js` file to handle backend logic.
+
+2. **Environment Configuration**:
+   - Used the `dotenv` package to manage environment variables securely.
+   - Created a `.env` file to store the Fixer API key.
+
+3. **API Endpoints**:
+   - Implemented an endpoint to fetch exchange rates from the Fixer API.
+   - Converted exchange rates to USD manually due to Fixer API limitations on the free tier.
+
+4. **Frontend Integration**:
+   - Updated the frontend to fetch data from the new backend endpoints.
+   - Displayed exchange rates in a table format on the Data page.
+   - Added a scroll bar to the table to handle large datasets.
+
+5. **Concurrent Server Setup**:
+   - Used the `concurrently` package to run both the backend and frontend servers with a single command.
+   - Updated `package.json` to include scripts for starting both servers concurrently.
+
+### Responsive Design
+- Implemented media queries to ensure the layout looks good on different screen sizes.
+- Adjusted navigation and main content styles for better responsiveness.
+
+### GitHub Repository
+The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
+
+### Next Steps
+- Continue to refine and enhance the backend services with more detailed API endpoints and possibly additional third-party integrations.
+- Integrate the frontend with the backend services using JavaScript and React.
+- Implement the backend services for user authentication, data retrieval, and real-time updates.
+- Continuously commit and push changes to GitHub to track progress and maintain version control.
