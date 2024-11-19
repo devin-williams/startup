@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home = () => {
   const [expandedFeatures, setExpandedFeatures] = useState([]);
+  const [rates, setRates] = useState(null);
 
   const features = [
     {
@@ -27,17 +28,17 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const fetchQuote = async () => {
+    const fetchRates = async () => {
       try {
-        const response = await fetch('/api/quote');
+        const response = await fetch('/api/rates');
         const data = await response.json();
-        setQuote(data.content);
+        setRates(data.rates);
       } catch (error) {
-        console.error('Failed to fetch quote:', error);
+        console.error('Failed to fetch rates:', error);
       }
     };
 
-    fetchQuote();
+    fetchRates();
   }, []);
 
   return (
@@ -57,9 +58,19 @@ const Home = () => {
           ))}
         </div>
         <img src="/assets/images/bookkeeping.jpg" alt="Bookkeeping" />
-        <div className="quote">
-          <h3>Random Quote</h3>
-          <p>{quote}</p>
+        <div className="rates">
+          <h3>Exchange Rates</h3>
+          {rates ? (
+            <ul>
+              {Object.entries(rates).map(([currency, rate]) => (
+                <li key={currency}>
+                  {currency}: {rate}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Loading rates...</p>
+          )}
         </div>
       </div>
     </main>
