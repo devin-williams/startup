@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const Data = () => {
   const [data, setData] = useState([]);
+  const [rates, setRates] = useState(null);
+  const [baseCurrency, setBaseCurrency] = useState('');
 
   useEffect(() => {
     // Mock fetching data
@@ -16,6 +18,25 @@ const Data = () => {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchRates = async () => {
+      try {
+        const response = await fetch('/api/rates');
+        const data = await response.json();
+        if (data.success) {
+          setRates(data.rates);
+          setBaseCurrency(data.base);
+        } else {
+          console.error('Failed to fetch rates:', data.error);
+        }
+      } catch (error) {
+        console.error('Failed to fetch rates:', error);
+      }
+    };
+
+    fetchRates();
   }, []);
 
   return (
@@ -41,6 +62,29 @@ const Data = () => {
             ))}
           </tbody>
         </table>
+        <div className="rates">
+          <h3>Exchange Rates (Base: {baseCurrency})</h3>
+          {rates ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(rates).map(([currency, rate], index) => (
+                  <tr key={currency}>
+                    <td>{currency}</td>
+                    <td>{rate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p>Loading rates...</p>
+          )}
+        </div>
       </div>
     </main>
   );

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 const Home = () => {
   const [expandedFeatures, setExpandedFeatures] = useState([]);
-  const [rates, setRates] = useState(null);
 
   const features = [
     {
@@ -27,20 +26,6 @@ const Home = () => {
     );
   };
 
-  useEffect(() => {
-    const fetchRates = async () => {
-      try {
-        const response = await fetch('/api/rates');
-        const data = await response.json();
-        setRates(data.rates);
-      } catch (error) {
-        console.error('Failed to fetch rates:', error);
-      }
-    };
-
-    fetchRates();
-  }, []);
-
   return (
     <main>
       <div className="container">
@@ -58,29 +43,6 @@ const Home = () => {
           ))}
         </div>
         <img src="/assets/images/bookkeeping.jpg" alt="Bookkeeping" />
-        <div className="rates">
-          <h3>Exchange Rates</h3>
-          {rates ? (
-            <table>
-              <thead>
-                <tr>
-                  <th>Currency</th>
-                  <th>Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(rates).map(([currency, rate], index) => (
-                  <tr key={currency}>
-                    <td>{currency}</td>
-                    <td>{rate}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>Loading rates...</p>
-          )}
-        </div>
       </div>
     </main>
   );
