@@ -61,13 +61,22 @@ const Home = () => {
         <div className="rates">
           <h3>Exchange Rates</h3>
           {rates ? (
-            <ul>
-              {Object.entries(rates).map(([currency, rate]) => (
-                <li key={currency}>
-                  {currency}: {rate}
-                </li>
-              ))}
-            </ul>
+            <table>
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(rates).map(([currency, rate], index) => (
+                  <tr key={currency}>
+                    <td>{currency}</td>
+                    <td>{rate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : (
             <p>Loading rates...</p>
           )}

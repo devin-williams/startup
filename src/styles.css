@@ -373,3 +373,60 @@ table tbody tr:last-of-type {
 .arrow.down {
     transform: rotate(135deg);
 }
+
+/* Exchange Rates Styles */
+.rates {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white-color);
+  }
+  
+  .rates h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .rates table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .rates th, .rates td {
+    padding: 10px;
+    border: 1px solid var(--light-color);
+    text-align: left;
+  }
+  
+  .rates th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+  
+  .rates tbody {
+    display: block;
+    max-height: 300px; /* Adjust this value to control the height */
+    overflow-y: auto;
+  }
+  
+  .rates tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .rates tbody tr:nth-child(even) {
+    background-color: var(--background-color);
+  }
+  
+  .rates thead, .rates tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
