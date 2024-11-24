@@ -232,5 +232,6 @@ In this deliverable, we have enhanced the CloudBooks Pro application by integrat
 
 ### Next Steps
 - Continue to refine and enhance the backend services with more detailed API endpoints and possibly additional third-party integrations.
-- Implement WebSocket to create a service chat feature where the placeholder currently isgi
+- Implement WebSocket to create a service chat feature where the placeholder currently is
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
+- add a message that appears when a log-in attempt does not work and when registering does not work
