@@ -197,8 +197,7 @@ In this deliverable, we have enhanced the CloudBooks Pro application by integrat
    - Updated `package.json` to include scripts for starting both servers concurrently.
 
 ### Next Steps
-- Continue to refine and enhance the backend services with more detailed API endpoints and possibly additional third-party integrations.
-- Integrate the frontend with the backend services using JavaScript and React.
+- Implement a database using MongoDB to persistently store the user's data
 - Implement the backend services for user authentication, data retrieval, and real-time updates.
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
 
@@ -233,6 +232,5 @@ In this deliverable, we have enhanced the CloudBooks Pro application by integrat
 
 ### Next Steps
 - Continue to refine and enhance the backend services with more detailed API endpoints and possibly additional third-party integrations.
-- Integrate the frontend with the backend services using JavaScript and React.
-- Implement the backend services for user authentication, data retrieval, and real-time updates.
+- Implement WebSocket to create a service chat feature where the placeholder currently isgi
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
