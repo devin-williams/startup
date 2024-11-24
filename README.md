@@ -215,3 +215,33 @@ The footer of each HTML page includes a link to the GitHub repository for this p
 - Integrate the frontend with the backend services using JavaScript and React.
 - Implement the backend services for user authentication, data retrieval, and real-time updates.
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
+
+## Database Deliverable
+
+### Overview
+In this deliverable, we have enhanced the CloudBooks Pro application by integrating MongoDB for data persistence and user authentication. This includes setting up database connections, creating API endpoints for user management, and ensuring secure handling of user credentials.
+
+### Implemented Features
+1. **Database Connection**:
+   - Set up a connection to MongoDB using the `MongoClient` from the `mongodb` package.
+   - Created a `database.js` file to handle database operations and connection logic.
+
+2. **User Management Endpoints**:
+   - Implemented endpoints in `index.js` for user registration (`/auth/create`), login (`/auth/login`), and logout (`/auth/logout`).
+   - Used `bcrypt` to hash user passwords before storing them in the database.
+   - Generated and managed user tokens for authentication.
+
+3. **Data Persistence**:
+   - Persisted user data in MongoDB, including storing hashed passwords and authentication tokens.
+   - Created functions in `database.js` to add, update, and delete user data.
+
+4. **Frontend Integration**:
+   - Updated the frontend to handle user registration, login, and logout.
+   - Used local storage to manage authentication tokens on the client side.
+   - Conditionally rendered content based on the user's authentication state.
+
+5. **Authorization**:
+   - Restricted access to certain parts of the application based on user authentication.
+   - Displayed user data and exchange rates only to authenticated users.
+   - Provided a login prompt for unauthenticated users attempting to access restricted content.
+gi
