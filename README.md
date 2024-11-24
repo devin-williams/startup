@@ -163,13 +163,6 @@ In this deliverable, we have converted the CloudBooks Pro application to use Rea
    - Implemented word wrapping to ensure long messages are displayed correctly.
    - Ensured the "You" label and the text message always appear on the same line.
 
-### Responsive Design
-- Implemented media queries to ensure the layout looks good on different screen sizes.
-- Adjusted navigation and main content styles for better responsiveness.
-
-### GitHub Repository
-The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
-
 ### Next Steps
 - Continue to refine and enhance the visual design with more detailed CSS and possibly additional libraries or frameworks.
 - Integrate the frontend with the backend services using JavaScript and React.
@@ -202,13 +195,6 @@ In this deliverable, we have enhanced the CloudBooks Pro application by integrat
 5. **Concurrent Server Setup**:
    - Used the `concurrently` package to run both the backend and frontend servers with a single command.
    - Updated `package.json` to include scripts for starting both servers concurrently.
-
-### Responsive Design
-- Implemented media queries to ensure the layout looks good on different screen sizes.
-- Adjusted navigation and main content styles for better responsiveness.
-
-### GitHub Repository
-The footer of each HTML page includes a link to the GitHub repository for this project, ensuring easy access for further development and collaboration.
 
 ### Next Steps
 - Continue to refine and enhance the backend services with more detailed API endpoints and possibly additional third-party integrations.
