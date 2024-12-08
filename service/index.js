@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const db = require('./database');
 const bcrypt = require('bcrypt');
 const config = require('./api_key.json');
+const WebSocket = require('ws');
 
 const app = express();
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -59,11 +60,35 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   }
 });
 
+// WebSocket server
+const wss = new WebSocket.Server({ server: app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+}) });
+
+let clients = [];
+
+wss.on('connection', (ws) => {
+  clients.push(ws);
+  console.log('New client connected');
+
+  ws.on('message', (message) => {
+    const parsedMessage = JSON.parse(message);
+    if (parsedMessage.type === 'chat') {
+      clients.forEach(client => {
+        if (client !== ws && client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify(parsedMessage));
+        }
+      });
+    }
+  });
+
+  ws.on('close', () => {
+    clients = clients.filter(client => client !== ws);
+    console.log('Client disconnected');
+  });
+});
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
 });
