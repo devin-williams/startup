@@ -1,15 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Support = () => {  
+const Support = () => {
   const [messages, setMessages] = useState([
     { user: 'John Doe', text: 'Hello! How can I help you today?', type: 'help-rep' },
     { user: 'Jane Smith', text: 'I need assistance with my account.', type: 'user' },
   ]);
   const [input, setInput] = useState('');
+  const [ws, setWs] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (!storedToken) {
+      navigate('/login');
+    } else {
+      const socket = new WebSocket('ws://localhost:4000');
+      socket.onopen = () => {
+        console.log('WebSocket connected');
+      };
+      socket.onmessage = (event) => {
+        const message = JSON.parse(event.data);
+        setMessages((prevMessages) => [...prevMessages, message]);
+      };
+      socket.onclose = () => {
+        console.log('WebSocket disconnected');
+      };
+      setWs(socket);
+    }
+  }, [navigate]);
 
   const handleSendMessage = () => {
-    if (input.trim() !== '') {
-      setMessages([...messages, { user: 'You', text: input, type: 'user' }]);
+    if (input.trim() !== '' && ws) {
+      const message = { user: 'You', text: input, type: 'user' };
+      ws.send(JSON.stringify({ type: 'chat', ...message }));
+      setMessages([...messages, message]);
       setInput('');
     }
   };
