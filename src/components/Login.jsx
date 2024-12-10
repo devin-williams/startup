@@ -5,16 +5,20 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState(null);
+  const [userType, setUserType] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
+    const storedUserType = localStorage.getItem('userType');
     if (storedToken) {
       setToken(storedToken);
+      setUserType(storedUserType);
     }
 
     const handleBeforeUnload = () => {
       localStorage.removeItem('token');
+      localStorage.removeItem('userType');
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -37,7 +41,9 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         setToken(data.token);
+        setUserType(data.type);
         localStorage.setItem('token', data.token);
+        localStorage.setItem('userType', data.type);
         console.log('User registered successfully:', data);
       } else {
         console.error('Failed to register user:', response.statusText);
@@ -60,7 +66,9 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         setToken(data.token);
+        setUserType(data.type);
         localStorage.setItem('token', data.token);
+        localStorage.setItem('userType', data.type);
         console.log('User logged in successfully:', data);
       } else {
         console.error('Failed to login user:', response.statusText);
@@ -81,7 +89,9 @@ const Login = () => {
       });
       if (response.ok) {
         setToken(null);
+        setUserType(null);
         localStorage.removeItem('token');
+        localStorage.removeItem('userType');
         console.log('User logged out successfully');
       } else {
         console.error('Failed to logout user:', response.statusText);

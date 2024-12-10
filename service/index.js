@@ -34,7 +34,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     res.status(409).send({ msg: 'Existing user' });
   } else {
     const newUser = await db.createUser(req.body.email, req.body.password);
-    res.send({ token: newUser.token });
+    res.send({ token: newUser.token, type: newUser.type });
   }
 });
 
@@ -44,7 +44,7 @@ apiRouter.post('/auth/login', async (req, res) => {
   if (user && await bcrypt.compare(req.body.password, user.password)) {
     const token = uuidv4();
     await db.updateUserToken(user.email, token);
-    res.send({ token });
+    res.send({ token, type: user.type });
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
   }
@@ -60,35 +60,31 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   }
 });
 
-// WebSocket server
-const wss = new WebSocket.Server({ server: app.listen(port, () => {
+// Start the server
+const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-}) });
+});
 
-let clients = [];
+// WebSocket server
+const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
-  clients.push(ws);
   console.log('New client connected');
 
   ws.on('message', (message) => {
     const parsedMessage = JSON.parse(message);
+    console.log('Received message:', parsedMessage);
     if (parsedMessage.type === 'chat') {
-      clients.forEach(client => {
-        if (client !== ws && client.readyState === WebSocket.OPEN) {
+      wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
           client.send(JSON.stringify(parsedMessage));
+          console.log('Sent message:', parsedMessage);
         }
       });
     }
   });
 
   ws.on('close', () => {
-    clients = clients.filter(client => client !== ws);
     console.log('Client disconnected');
   });
-});
-
-// Return the application's default page if the path is unknown
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
 });
