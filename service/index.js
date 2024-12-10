@@ -76,14 +76,14 @@ wss.on('connection', (ws) => {
     console.log('Received message:', parsedMessage);
     console.log('Attempting to broadcast to a client:', JSON.stringify(parsedMessage));
     console.log('type:', parsedMessage.type);
-    
+    if (parsedMessage.type === 'chat') {
       wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN && client !== ws) {
           client.send(JSON.stringify(parsedMessage));
           console.log('Sent message:', parsedMessage);
         }
       });
-    
+    }
   });
 
   ws.on('close', () => {

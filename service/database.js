@@ -29,7 +29,7 @@ function getUserByToken(token) {
 
 async function createUser(email, password) {
   const passwordHash = await bcrypt.hash(password, 10);
-  const userType = email === 'admin' && password === 'admin' ? 'help-rep' : 'user';
+  const userType = email === 'admin' && password === 'admin' ? 'admin' : 'user';
 
   const user = {
     email: email,
