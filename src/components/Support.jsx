@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Support = () => {
   const [messages, setMessages] = useState([
-    { user: 'John Doe', text: 'Hello! How can I help you today?', type: 'help-rep' },
-    { user: 'Jane Smith', text: 'I need assistance with my account.', type: 'user' },
+    { user: 'WELCOME', text: 'Send a message today to get help!', userType: 'admin' },
   ]);
   const [input, setInput] = useState('');
   const ws = useRef(null);
@@ -38,7 +37,7 @@ const Support = () => {
 
   const handleSendMessage = () => {
     if (input.trim() !== '' && ws.current) {
-      const message = { user: userType === 'help-rep' ? 'Admin' : 'You', text: input, type: userType };
+      const message = { user: userType === 'admin' ? 'Admin' : 'Client', text: input, userType: userType };
       ws.current.send(JSON.stringify({ type: 'chat', ...message }));
       console.log('Sent message:', message);
       setMessages((prevMessages) => [...prevMessages, message]);
@@ -65,7 +64,7 @@ const Support = () => {
           </div>
           <div className="chat-messages">
             {messages.map((message, index) => (
-              <div key={index} className={`message ${message.type}`}>
+              <div key={index} className={`message ${message.userType}`}>
                 <span className="user">{message.user}:</span>
                 <span className="text">{message.text}</span>
               </div>
