@@ -17,8 +17,8 @@ const Support = () => {
     } else {
       if (!ws.current) {
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        // const socket = new WebSocket(`${protocol}://${window.location.hostname}:${window.location.port}/ws`);
-        const socket = new WebSocket(`ws://localhost:4000/ws`);
+        const socket = new WebSocket(`${protocol}://${window.location.hostname}:${window.location.port}/ws`);
+        // const socket = new WebSocket(`ws://localhost:4000/ws`);
         ws.current = socket;
         socket.onopen = () => {
           console.log('WebSocket connected');
