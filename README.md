@@ -235,3 +235,35 @@ In this deliverable, we have enhanced the CloudBooks Pro application by integrat
 - Implement WebSocket to create a service chat feature where the placeholder currently is
 - Continuously commit and push changes to GitHub to track progress and maintain version control.
 - add a message that appears when a log-in attempt does not work and when registering does not work
+
+## WebSocket Deliverable
+
+### Overview
+In this deliverable, we have enhanced the CloudBooks Pro application by integrating WebSocket functionality for real-time chat support. This includes setting up a WebSocket server, connecting the WebSocket from the frontend, and ensuring messages are correctly sent and received between clients.
+
+### Implemented Features
+1. **WebSocket Server Setup**:
+   - Set up a WebSocket server using the `ws` library in `index.js`.
+   - Configured the WebSocket server to handle connections, messages, and disconnections.
+
+2. **Frontend WebSocket Connection**:
+   - Updated the `Support.jsx` component to establish a WebSocket connection.
+   - Used the `useRef` hook to ensure only one WebSocket connection is created per client.
+
+3. **Message Handling**:
+   - Implemented logic to send messages from the client to the WebSocket server.
+   - Updated the WebSocket server to broadcast messages to all connected clients.
+   - Ensured the frontend correctly handles incoming messages and updates the chat window.
+
+4. **Username Integration**:
+   - Included the username of the client in the message object.
+   - Displayed the username in the chat window for each message.
+
+5. **Proxy Configuration**:
+   - Configured `vite.config.js` to proxy WebSocket requests during development.
+
+### Next Steps
+- Continue to refine and enhance the WebSocket functionality with additional features such as message history and notifications.
+- Implement more detailed logging and error handling for WebSocket connections.
+- Continuously commit and push changes to GitHub to track progress and maintain version control.
+- Add a message that appears when a log-in attempt does not work and when registering does not work.
